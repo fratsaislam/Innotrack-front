@@ -56,6 +56,16 @@ const Navbar = () => {
           <a href="/mission" className="text-white hover:text-orange-400 transition-all duration-300 font-medium hover:scale-105">Our Mission</a>
           <a href="/projects/view" className="text-white hover:text-orange-400 transition-all duration-300 font-medium hover:scale-105">Projects</a>
           
+          {/* Admin Dashboard Button for Desktop */}
+          {user && user.role === "admin" && (
+            <button
+              className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              onClick={() => router.push('/dashboard')}
+            >
+              Dashboard
+            </button>
+          )}
+          
           {loading ? (
             <div className="w-10 h-10 bg-gray-300 rounded-full animate-pulse"></div>
           ) : user ? (
@@ -107,7 +117,7 @@ const Navbar = () => {
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="flex flex-col p-6 gap-6 mt-16">
-            {/* Admin Dashboard Button for Mobile Only */}
+            {/* Admin Dashboard Button for Mobile */}
             {user && user.role === "admin" && (
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105"
