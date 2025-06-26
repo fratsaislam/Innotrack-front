@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosPlain = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://innotrack.onrender.com/api",
 });
 
 export default axiosPlain;

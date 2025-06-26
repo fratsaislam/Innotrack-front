@@ -8,7 +8,7 @@ export const useUserDetails = () => {
   useEffect(() => {
     const getUserDetails = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/auth/check', {
+        const response = await fetch('https://innotrack.onrender.com/api/auth/check', {
           method: 'GET',
           credentials: 'include',
           headers: {
